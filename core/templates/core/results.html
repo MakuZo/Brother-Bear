@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Your url</h1>
-    <h3><a href="{{ url.id }}">{{ host }}/{{ url.id }}</a></h3>
-    <a href="">Go back</a>
-</body>
-</html>
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="siimple-h2 siimple--text-normal siimple--mb-1" align="center">
+    Your custom URL is ready
+</div>
+<div class="siimple--text-normal siimple--mb-1" align="center">
+        <a href="{{ url.id }}">{{ host }}/{{ url.id }}</a>
+</div>
+<div class="siimple-small siimple--mb-1 siimple--pt-1" align="center">
+        <a href="">Go back</a>
+</div>
+
+{% endblock %}
