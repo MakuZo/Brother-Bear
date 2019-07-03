@@ -7,15 +7,19 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='ShortenedURL',
+            name="ShortenedURL",
             fields=[
-                ('id', models.CharField(max_length=8, primary_key=True, serialize=False, unique=True)),
-                ('url', models.URLField()),
+                (
+                    "id",
+                    models.CharField(
+                        max_length=8, primary_key=True, serialize=False, unique=True
+                    ),
+                ),
+                ("url", models.URLField()),
             ],
-        ),
+        )
     ]
