@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 
 from core.forms import ShortenURLForm
@@ -27,3 +27,11 @@ class ShortenUrlView(View):
                 u = ShortenedURL.objects.create(url=url, id=get_short_id())
             return render(request, "core/results.html", {"url": u, "host": request.META['HTTP_HOST']})
         return render(request, self.template_name, {"form": form})
+
+
+class RedirectURLView(View):
+    """View to redirect shortened url to the origin url"""
+
+    def get(self, request, id):
+        obj = get_object_or_404(ShortenedURL, pk=id)
+        return redirect(obj.url)
