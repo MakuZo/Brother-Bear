@@ -24,7 +24,7 @@ class ShortenUrlView(View):
                 u = ShortenedURL.objects.get(url=url)
             else:
                 u = ShortenedURL.objects.create(url=url, id=get_short_id())
-            return render(request, "core/results.html", {"url": u, "host": request.META['HTTP_HOST']})
+            return render(request, "core/results.html", {"url": u, "request": request})
         return render(request, self.template_name, {"form": form})
 
 

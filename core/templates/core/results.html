@@ -1,12 +1,12 @@
 {% extends 'core/base.html' %}
 {% block content %}
-<div class="siimple-h2 siimple--text-normal siimple--mb-1" align="center">
+<div class="siimple-h3 siimple--text-normal siimple--mb-1" align="center">
     Your custom URL is ready
 </div>
 <div class="siimple--text-normal siimple--mb-1" align="center">
-        <a href="{{ url.id }}">{{ host }}/{{ url.id }}</a>
+        <a href="{{ url.id }}" class="siimple-code">{{ request.META.HTTP_HOST }}/{{ url.id }}</a>
 </div>
-<div class="siimple-small siimple--mb-1 siimple--pt-1" align="center">
+<div class="siimple-small siimple--mb-1 siimple--pt-2" align="center">
         <a href="">Go back</a>
 </div>
 
