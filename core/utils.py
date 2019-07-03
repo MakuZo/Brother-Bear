@@ -1,5 +1,7 @@
 from django.utils.crypto import get_random_string
+
 from core.models import ShortenedURL
+
 
 def get_short_id():
     while True:

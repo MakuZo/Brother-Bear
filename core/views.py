@@ -1,10 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
 
 from core.forms import ShortenURLForm
 from core.models import ShortenedURL
 from core.utils import get_short_id
-
 
 
 class ShortenUrlView(View):
